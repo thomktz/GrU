@@ -17,8 +17,12 @@ class GrU:
     - pandas index will always override 'index'
     - 'index' must be 1d (for now)
     """
-    
     def __new__(self, object, labels=None, index=None):
+        if isinstance(object, list):
+            return self.new(np.array(object), labels, index)
+        return self.new(object, labels, index)
+    
+    def new(object, labels=None, index=None):
         # Numpy arrays
         if isinstance(object, np.ndarray):
             shape = object.shape
@@ -39,8 +43,8 @@ class GrU:
             elif len(shape) == 2:
                 if isinstance(labels, Iterable) and len(labels) != shape[0]:
                     raise ValueError(f"Length of labels ({len(labels)}) should be the same size as the number of rows ({shape[0]}), or be None.")
-                if labels is not None:
-                    raise ValueError(f"Labels should either be None, or the correct size ({shape[0]} instead of {len(labels)})")
+                if labels is None:
+                    return GrU_2d(object, ['Line '+str(i) for i in range(1, shape[0]+1)], index)
                 return GrU_2d(object, labels, index)
             
             elif len(shape) == 3:
@@ -57,17 +61,12 @@ class GrU:
                 if isinstance(labels, Iterable) and len(labels) != 1:
                     raise ValueError(f"Labels should either be None, or the correct size (1 instead of {len(labels)})")
             if labels is None:
-                return GrU_1d(object.values, "0", object.index)
+                return GrU_1d(object.values, object.name, object.index)
             return GrU_1d(object.values, labels, object.index)
             
         # Pandas DataFrames
         elif isinstance(object, pd.DataFrame):
-            # TODO
-            pass
-
-        # Builtin lists
-        elif isinstance(object, list):
-            return GrU(np.array(object), labels)
+            return GrU_2d(object.values.T, list(object.columns), list(object.index))
 
         else:
             raise ValueError(f"Type {type(object)} is not accepted.")
@@ -79,3 +78,5 @@ def gru(object, *args, **kwargs):
 
 pd.Series.gru = gru
 pd.DataFrame.gru = gru
+
+# %%
