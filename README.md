@@ -1,5 +1,5 @@
-# GrU
-Graph Utils for Python
+# Graph Utils
+GrU - Graph Utils for Python
 
 Easily plot all data structures with a unique constructor
 
