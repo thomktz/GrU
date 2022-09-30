@@ -76,4 +76,6 @@ class GrU:
 
 def gru(object, *args, **kwargs):
     return GrU(object, *args, **kwargs)
-# %%
+
+pd.Series.gru = gru
+pd.DataFrame.gru = gru
