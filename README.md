@@ -38,3 +38,12 @@ gru_object.hist()
 gru_object.heatmap()
 gru_object.image()
 ```
+
+## Examples:
+
+```python
+my_array = np.sort(np.random.random((4,50))**2)
+gru(my_array).line("Squared uniform distributions")
+```
+![sq](https://user-images.githubusercontent.com/60552083/193302023-4dba5382-5a7c-4301-bb58-c5d937525822.png)
+
