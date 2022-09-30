@@ -57,7 +57,7 @@ class GrU:
                 if isinstance(labels, Iterable) and len(labels) != 1:
                     raise ValueError(f"Labels should either be None, or the correct size (1 instead of {len(labels)})")
             if labels is None:
-                return GrU_1d(object.values, "0")
+                return GrU_1d(object.values, "0", object.index)
             return GrU_1d(object.values, labels, object.index)
             
         # Pandas DataFrames
@@ -73,4 +73,7 @@ class GrU:
             raise ValueError(f"Type {type(object)} is not accepted.")
 
 
+
+def gru(object, *args, **kwargs):
+    return GrU(object, *args, **kwargs)
 # %%
