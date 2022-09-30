@@ -6,7 +6,7 @@ from GrU_1d import GrU_1d
 from GrU_2d import GrU_2d
 from GrU_3d import GrU_3d
 #%%
-
+_ = None
 class GrU:
     """
     GrU - Graph Utils
