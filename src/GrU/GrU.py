@@ -1,6 +1,10 @@
 import numpy as np
 import pandas as pd
 from collections import Iterable
+from Gru_1d import Gru_1d
+from Gru_2d import Gru_2d
+from Gru_3d import Gru_3d
+
 
 class GrU:
     """
