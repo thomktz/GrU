@@ -39,12 +39,12 @@ As well as high-level plotting functions
 ```python
 from GrU.io import gline
 
+gline(my_object)
+
+# Or, for pandas objects
 my_series.gline()
 
 # Which is equivalent to:
-my_series.gru().line()
-
-# or
 GrU(my_series).line()
 
 ```
