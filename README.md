@@ -13,23 +13,6 @@ gru_series = GrU(pd.Series([0,1,2,3,4], index=[10,20,30,40,50]))
 gru_dataframe = GrU(pd.DataFrame(np.array([[0,1,2,3,4], [5,6,7,8,9]]).T, columns=['My first column', 'My second column']))
 ```
 
-You can also use a builder function:
-
-```python
-from GrU import gru
-
-gru_object = gru(my_object)
-```
-
-or, for `pandas` objects, builder methods:
-
-```python
-from GrU import _
-
-gru_series = my_series.gru()
-gru_dataframe = my_dataframe.gru()
-```
-
 Then, you can plot your `GrU` object using a compatible method:
 
 ```python
@@ -38,6 +21,37 @@ gru_object.hist()
 gru_object.heatmap()
 gru_object.image()
 ```
+
+There is also a high-level API:
+
+```python
+from GrU.io import gru
+
+gru_object = gru(my_object)
+
+#Pandas specific methods
+gru_series = my_series.gru()
+gru_dataframe = my_dataframe.gru()
+```
+
+As well as high-level plotting functions
+
+```python
+from GrU.io import gline
+
+my_series.gline()
+
+# Which is equivalent to:
+my_series.gru().line()
+
+# or
+GrU(my_series).line()
+
+```
+
+
+
+
 
 ## Examples:
 

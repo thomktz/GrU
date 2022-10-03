@@ -70,13 +70,3 @@ class GrU:
 
         else:
             raise ValueError(f"Type {type(object)} is not accepted.")
-
-
-
-def gru(object, *args, **kwargs):
-    return GrU(object, *args, **kwargs)
-
-pd.Series.gru = gru
-pd.DataFrame.gru = gru
-
-# %%
