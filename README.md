@@ -63,7 +63,7 @@ gru(my_array).line("Squared uniform distributions")
 
 ```python
 random_walks = pd.DataFrame(np.cumsum(np.random.random((5,1000))*2-1, axis=1).T)
-random_walks.gru().line(title='Uniform random walks', mode='lines')
+random_walks.gline(title='Uniform random walks', mode='lines')
 ```
 
 ![rw](https://user-images.githubusercontent.com/60552083/193304458-0fb328c3-5336-4d54-b6bb-291eccfcac6c.png)
