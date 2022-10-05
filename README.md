@@ -37,9 +37,10 @@ gru_dataframe = my_dataframe.gru()
 As well as high-level plotting functions
 
 ```python
-from GrU.io import gline
+from GrU.io import gline, ghist
 
-gline(my_object)
+fig_line = gline(my_object)
+fig_hist = ghist(my_object)
 
 # Or, for pandas objects
 my_series.gline()
