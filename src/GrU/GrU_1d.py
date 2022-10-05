@@ -20,4 +20,18 @@ class GrU_1d:
         )
         self.fig.update_layout(title=title)
         return self.fig
-# %%
+
+    def hist(self, title=None, normalized=False, horizontal=False):
+        self.fig = go.Figure()
+        kwargs = {}
+        if normalized:
+            kwargs['histnorm'] = 'probability'
+        if horizontal:
+            kwargs['y'] = self.array
+        else:
+            kwargs['x'] = self.array
+        self.fig.add_trace(
+            go.Histogram(**kwargs)
+        )
+        self.fig.update_layout(title=title, bargap=0.1)
+        return self.fig
