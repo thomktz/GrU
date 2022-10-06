@@ -64,8 +64,8 @@ gru(my_array).line("Squared uniform distributions")
 
 ```python
 random_walks = pd.DataFrame(np.cumsum(np.random.random((5,1000))*2-1, axis=1).T)
-random_walks.gline(mode='lines').show()
-random_walks.ghist(horizontal=True, barmode='stack').show()
+random_walks.gline(mode='lines', title='Random walk trajectories').show()
+random_walks.ghist(horizontal=True, barmode='stack', title='Random walk distributions').show()
 ```
 
 ![rww](https://user-images.githubusercontent.com/60552083/194284575-4035a817-03cb-4c08-a5ee-2f3e7e267d8f.png)
