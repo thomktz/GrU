@@ -64,13 +64,15 @@ gru(my_array).line("Squared uniform distributions")
 ![sq](https://user-images.githubusercontent.com/60552083/193302023-4dba5382-5a7c-4301-bb58-c5d937525822.png)
 
 ```python
-random_walks = pd.DataFrame(np.cumsum(np.random.random((5,1000))*2-1, axis=1).T)
+random_walks = pd.DataFrame(np.cumsum(np.random.random((5,1000))*2-1, axis=1).T, index=pd.date_range('08/06/2019', '05/01/2022'))
 random_walks.gline(mode='lines', title='Random walk trajectories').show()
 random_walks.ghist(horizontal=True, barmode='stack', title='Random walk distributions').show()
 ```
 
-![rww](https://user-images.githubusercontent.com/60552083/194284575-4035a817-03cb-4c08-a5ee-2f3e7e267d8f.png)
-![Annotation 2022-10-06 112039](https://user-images.githubusercontent.com/60552083/194284599-a711f677-2d7d-45f0-8f73-530cb11f31a4.png)
+![rwww](https://user-images.githubusercontent.com/60552083/194341693-21b99af6-89a3-4704-ab62-25a33758ec37.png)
+![rwwd](https://user-images.githubusercontent.com/60552083/194341711-b975ea4a-28bc-40eb-8d30-f0d245feb0bd.png)
+
+
 
 ```python 
 PI = [int(e) for e in """3.1415926535897932384626433832795028841[...]""".replace('.','')]
