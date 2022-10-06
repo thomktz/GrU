@@ -1,5 +1,6 @@
 # Graph Utils
 GrU - Graph Utils for Python
+> Requirements are [plotly](https://github.com/plotly/plotly.py), [numpy](https://github.com/numpy/numpy) and [pandas](https://github.com/pandas-dev/pandas)
 
 Easily plot all data structures with a unique constructor
 
