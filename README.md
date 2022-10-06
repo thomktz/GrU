@@ -69,4 +69,7 @@ random_walks.ghist(horizontal=True, barmode='stack').show()
 ```
 
 
+![rww](https://user-images.githubusercontent.com/60552083/194275947-26b72aed-7efe-4baf-9c2c-f8727d634a63.png)
+![Annotation 2022-10-06 112039](https://user-images.githubusercontent.com/60552083/194276146-a61d9c12-e138-4fb6-8bd3-364c32d85801.png)
+
 
