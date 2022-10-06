@@ -70,3 +70,9 @@ random_walks.ghist(horizontal=True, barmode='stack').show()
 
 ![rww](https://user-images.githubusercontent.com/60552083/194284575-4035a817-03cb-4c08-a5ee-2f3e7e267d8f.png)
 ![Annotation 2022-10-06 112039](https://user-images.githubusercontent.com/60552083/194284599-a711f677-2d7d-45f0-8f73-530cb11f31a4.png)
+
+```python 
+PI = [int(e) for e in """3.1415926535897932384626433832795028841[...]""".replace('.','')]
+gru(PI).hist(title='Frequency of digits in the first 1000 decimals of Pi', normalized=True)
+```
+![pi](https://user-images.githubusercontent.com/60552083/194286696-095c347b-a4aa-47e7-8fd0-69d99bad2fb0.png)
