@@ -67,3 +67,6 @@ random_walks = pd.DataFrame(np.cumsum(np.random.random((5,1000))*2-1, axis=1).T)
 random_walks.gline(mode='lines').show()
 random_walks.ghist(horizontal=True, barmode='stack').show()
 ```
+
+![rww](https://user-images.githubusercontent.com/60552083/194284575-4035a817-03cb-4c08-a5ee-2f3e7e267d8f.png)
+![Annotation 2022-10-06 112039](https://user-images.githubusercontent.com/60552083/194284599-a711f677-2d7d-45f0-8f73-530cb11f31a4.png)
