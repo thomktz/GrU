@@ -35,3 +35,5 @@ class GrU_1d:
         )
         self.fig.update_layout(title=title, bargap=0.1)
         return self.fig
+
+blabla
